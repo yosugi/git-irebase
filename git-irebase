@@ -1,0 +1,55 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+sub usage {
+  print <<USAGE;
+Usage: git irebase [<upstream>] [<branch>]
+USAGE
+  exit(1);
+}
+
+sub main {
+    my ($upstream, $branch) = @_;
+
+    $upstream = 2 unless ($upstream);
+    $branch = "" unless ($branch);
+
+    if ($upstream =~ /^[0-9]+$/) {
+        $upstream = "HEAD~$upstream";
+    } elsif ($upstream =~ /^[0-9^~]+$/) {
+        $upstream = "HEAD$upstream";
+    }
+
+    exec "git rebase -i $upstream $branch";
+}
+
+main(@ARGV);
+
+__END__
+
+=head1 NAME
+
+git-irebase - alias for git rebase -i
+
+=head1 SYNOPSIS
+
+  $ git irebase [<upstream>] [<branch>]
+
+=head1 DESCRIPTION
+
+  $ git clone https://github.com/yosugi/git-irebase.git
+  $ export PATH=./git-irebase:$PATH
+  $ git irebase
+
+=head1 AUTHOR
+
+yosugi
+
+=head1 LICENSE
+
+MIT license (http://opensource.org/licenses/mit-license.php)
+
+=cut
+
+
