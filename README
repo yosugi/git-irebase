@@ -1,0 +1,17 @@
+NAME
+    git-irebase - alias for git rebase -i
+
+SYNOPSIS
+      $ git irebase [<upstream>] [<branch>]
+
+DESCRIPTION
+      $ git clone https://github.com/yosugi/git-irebase.git
+      $ export PATH=./git-irebase:$PATH
+      $ git irebase
+
+AUTHOR
+    yosugi
+
+LICENSE
+    MIT license (http://opensource.org/licenses/mit-license.php)
+
