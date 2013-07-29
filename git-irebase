@@ -6,20 +6,23 @@ use warnings;
 sub main {
     my ($upstream, $branch) = @_;
 
-    $upstream = 2 unless ($upstream);
-    $branch = "" unless ($branch);
+    $upstream = 2  unless ($upstream);
+    $branch   = '' unless ($branch);
 
     if ($upstream =~ /^[0-9]+$/) {
         $upstream = "HEAD~$upstream";
-    } elsif ($upstream =~ /^[0-9^~]+$/) {
+    } elsif ($upstream =~ /^[~^][0-9~^]*$/) {
         $upstream = "HEAD$upstream";
     }
 
-    exec "git rebase -i $upstream $branch";
+    return "git rebase -i $upstream $branch";
 }
 
-main(@ARGV);
+if ($0 eq __FILE__) {
+    exec main(@ARGV);
+}
 
+1;
 __END__
 
 =head1 NAME
@@ -46,5 +49,4 @@ yosugi
 MIT license (http://opensource.org/licenses/mit-license.php)
 
 =cut
-
 
