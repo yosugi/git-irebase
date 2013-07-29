@@ -1,13 +1,7 @@
 #!/usr/bin/env perl
+
 use strict;
 use warnings;
-
-sub usage {
-  print <<USAGE;
-Usage: git irebase [<upstream>] [<branch>]
-USAGE
-  exit(1);
-}
 
 sub main {
     my ($upstream, $branch) = @_;
@@ -35,6 +29,7 @@ git-irebase - alias for git rebase -i
 =head1 SYNOPSIS
 
   $ git irebase [<upstream>] [<branch>]
+  $ git ir      [<upstream>] [<branch>]
 
 =head1 DESCRIPTION
 

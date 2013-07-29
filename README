@@ -3,6 +3,7 @@ NAME
 
 SYNOPSIS
       $ git irebase [<upstream>] [<branch>]
+      $ git ir      [<upstream>] [<branch>]
 
 DESCRIPTION
       $ git clone https://github.com/yosugi/git-irebase.git
