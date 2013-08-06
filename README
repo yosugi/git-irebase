@@ -6,6 +6,12 @@ SYNOPSIS
       $ git ir      [<upstream>] [<branch>]
 
 DESCRIPTION
+      git irebase           -> git rebase -i HEAD~2
+      git irebase 5         -> git rebase -i HEAD~5
+      git irebase ^^^       -> git rebase -i HEAD^^^
+      git irebase 2 develop -> git rebase -i HEAD~2 develop
+
+INSTALL
       $ git clone https://github.com/yosugi/git-irebase.git
       $ export PATH=./git-irebase:$PATH
       $ git irebase
@@ -14,5 +20,5 @@ AUTHOR
     yosugi
 
 LICENSE
-    MIT license (http://opensource.org/licenses/mit-license.php)
+    MIT License (http://opensource.org/licenses/mit-license.php)
 

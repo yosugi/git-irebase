@@ -36,6 +36,13 @@ git-irebase - alias for git rebase -i
 
 =head1 DESCRIPTION
 
+  git irebase           -> git rebase -i HEAD~2
+  git irebase 5         -> git rebase -i HEAD~5
+  git irebase ^^^       -> git rebase -i HEAD^^^
+  git irebase 2 develop -> git rebase -i HEAD~2 develop
+
+=head1 INSTALL
+
   $ git clone https://github.com/yosugi/git-irebase.git
   $ export PATH=./git-irebase:$PATH
   $ git irebase
@@ -46,7 +53,7 @@ yosugi
 
 =head1 LICENSE
 
-MIT license (http://opensource.org/licenses/mit-license.php)
+MIT License (http://opensource.org/licenses/mit-license.php)
 
 =cut
 
